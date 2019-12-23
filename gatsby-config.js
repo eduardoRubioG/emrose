@@ -1,12 +1,12 @@
 let siteMetadata = {
-    title: `Elemental`,
+    title: `Emma Rose`,
     capitalizeTitleOnHome: true,
     logo: `/images/logo.png`,
     icon: `/images/icon.png`,
     titleImage: `/images/wall.jpg`,
-    introTag: `PHOTOGRAPHER | VIDEOGRAPHER`,
+    introTag: `Creative Studios`,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-    author: `@_akzhy`,
+    author: `Eduardo Rubio`,
     blogItemsPerPage: 10,
     portfolioItemsPerPage: 10,
     darkmode: true,
@@ -34,14 +34,14 @@ let siteMetadata = {
         }
     ],
     footerLinks: [
-        {
-            name: "PRIVACY POLICY",
-            url: "/privacy-policy"
-        },
-        {
-            name: "GitHub",
-            url: "https://github.com/akzhy/gatsby-starter-elemental"
-        }
+        // {
+        //     name: "PRIVACY POLICY",
+        //     url: "/privacy-policy"
+        // },
+        // {
+        //     name: "GitHub",
+        //     url: "https://github.com/akzhy/gatsby-starter-elemental"
+        // }
     ],
     social: [
         {
@@ -69,9 +69,9 @@ let siteMetadata = {
         /* Leave the below value completely empty (no space either) if you don't want a contact form. */
         api_url: "./test.json",
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-        mail: "hi@akzhy.com",
+        mail: "exmaple@gmail.com",
         phone: "000-000-0000",
-        address: "1234 \nLocation \nLocation"
+        address: "Atlanta Area"
     }
 };
 
