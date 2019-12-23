@@ -113,7 +113,8 @@ class IndexPage extends React.Component {
                                     ></image>
                                 </pattern>
                                 <text
-                                    fill="url(#wallPattern)"
+                                    // fill="url(#wallPattern)"
+                                    fill="#BB9847"
                                     textAnchor="middle"
                                     x="50"
                                     y="50"

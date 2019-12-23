@@ -34,14 +34,14 @@ let siteMetadata = {
         }
     ],
     footerLinks: [
-        // {
-        //     name: "PRIVACY POLICY",
-        //     url: "/privacy-policy"
-        // },
-        // {
-        //     name: "GitHub",
-        //     url: "https://github.com/akzhy/gatsby-starter-elemental"
-        // }
+        {
+            name: "PRIVACY POLICY",
+            url: "/privacy-policy"
+        },
+        {
+            name: "GitHub",
+            url: "https://github.com/akzhy/gatsby-starter-elemental"
+        }
     ],
     social: [
         {

@@ -5,6 +5,10 @@ import Img from "gatsby-image";
 import SEO from "../components/seo";
 import "../style/basepage.less";
 
+/** 
+ *      This is the ABOUT main page. Idk why it is called the basepage. We can change that later 
+ * 
+ */
 export default function({ data }) {
     return (
         <Layout>
