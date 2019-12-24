@@ -7,6 +7,10 @@ import { Row, Col } from "../components/page-components/grid";
 import MD from "gatsby-custom-md";
 import "../style/portfolio-singlepage.less";
 
+/**
+ * This is portfolio items. I'm thinking we can have a masonry layout here 
+ */
+
 const components = {
     row: Row,
     col: Col

@@ -6,6 +6,11 @@ import SectionTitle from "../components/sectiontitle";
 import Pagination from "../components/pagination";
 import SEO from "../components/seo";
 
+/**
+ * This file is where all the blog postings come up in a list
+ * Kind of like the browsing for all blog posts 
+ */
+
 class BlogList extends React.Component {
     render() {
         const query = this.props.datas;
@@ -13,7 +18,7 @@ class BlogList extends React.Component {
             return (
                 <section id="blog" className="container">
                     <div className="section-title">
-                        <SectionTitle title="BLOG" />
+                        <SectionTitle title="EM'VENTURES" />
                     </div>
                     <BlogItems data={query} />
                     <Pagination

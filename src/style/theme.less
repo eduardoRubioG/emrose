@@ -5,6 +5,7 @@
 @textNormal: #333;
 @colorPrimary: @textSecondary;
 @colorSecondary: #F55555;
+@matteGold : #BB9847;
 @colorError : #F55555;
 @colorSuccess : #4CAF50;
 @fontBold: 'Work Sans', sans-serif;
@@ -239,15 +240,16 @@ nav ul li a:before{
 
 
 .dark-mode{
-	@background: #171B27;
+	@background: #141414;
 	@textPrimary: #c5c5c5;
-	@textSecondary: #6888DF;
+	@textSecondary: #BB9847;
 	@textTertiary:#848EA8;
 	@textNormal: #b8b7bf;
 	@colorPrimary: @textSecondary;
-	@colorSecondary: #F55555;
+	@colorSecondary: #BB9847;
 	@colorError : #F55555;
 	@colorSuccess : #4CAF50;
+	@matteGold : #BB9847;
 
 
 	&{
@@ -307,7 +309,7 @@ nav ul li a:before{
 	}
 
 	.btn{
-		background-image: linear-gradient(to left,@colorPrimary,@colorSecondary) !important;
+		background: @matteGold !important; 
 	}
 
 	.pseudo-divider:after{
