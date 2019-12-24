@@ -1,5 +1,5 @@
 let siteMetadata = {
-    title: `Emma Rose`,
+    title: `My Website`,
     capitalizeTitleOnHome: true,
     logo: `/images/logo.png`,
     icon: `/images/icon.png`,
@@ -81,6 +81,16 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-react-helmet`,
+        {
+            resolve: `gatsby-source-wordpress`,
+            options: {
+              baseUrl: `localhost:8888/wordpress`,
+              protocol: `http`,
+              hostingWPCOM: false,
+              useACF: true,
+              verboseOutput: false,
+            }
+        },
         {
             resolve: `gatsby-transformer-remark`,
             options: {
