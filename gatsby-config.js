@@ -117,6 +117,14 @@ module.exports = {
             options: {
                 strictMath: true
             }
-        }
+        },
+        {
+            resolve: "gatsby-source-graphql",
+            options: {
+              typeName: "WPGraphQL",
+              fieldName: "wpgraphql",
+              url: `http://localhost:8888/wordpress/graphql`,
+            },
+        },
     ]
 };

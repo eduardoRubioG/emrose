@@ -12,18 +12,19 @@ import "../style/basepage.less";
 export default function({ data }) {
     return (
         <Layout>
-            <SEO
+            {/* <SEO
                 lang="en"
-                title={data.markdownRemark.frontmatter.title}
+                title={data.allWordpressPage.edges.node.title}
                 description={data.markdownRemark.frontmatter.description}
-            />
+            /> */}
             <div className="container">
                 <article className="post">
                     <div className="head text-primary">
-                        <h1>{data.markdownRemark.frontmatter.title}</h1>
+                        <h1>{data.allWordpressPage.edges[0].node.title}</h1>
                     </div>
                     <div className="content row flex">
-                        {data.markdownRemark.frontmatter.image && (
+                        {/* This is where the user image will go */}
+                        {/* {data.markdownRemark.frontmatter.image && (
                             <div className="center">
                                 <div className="img">
                                     <Img
@@ -33,12 +34,11 @@ export default function({ data }) {
                                         }
                                     />
                                 </div>
-                            </div>
-                        )}
+                            </div> */}
                         <div
                             className="col s12 m11 l10"
                             dangerouslySetInnerHTML={{
-                                __html: data.markdownRemark.html
+                                __html: data.allWordpressPage.edges[0].node.content
                             }}
                         ></div>
                     </div>
@@ -47,25 +47,36 @@ export default function({ data }) {
         </Layout>
     );
 }
-
 export const query = graphql`
-    query($slug: String!) {
-        markdownRemark(fields: { slug: { eq: $slug } }) {
-            html
-            frontmatter {
-                title
-                description
-                image {
-                    publicURL
-                    childImageSharp {
-                        fluid(maxWidth: 1920) {
-                            srcSet
-                            ...GatsbyImageSharpFluid
-                        }
-                        id
-                    }
+    query {
+        allWordpressPage( filter: {title: {regex: "/About/"}} ){ 
+            edges { 
+                node { 
+                    title
+                    content
                 }
             }
         }
     }
 `;
+// export const query = graphql`
+//     query($slug: String!) {
+//         markdownRemark(fields: { slug: { eq: $slug } }) {
+//             html
+//             frontmatter {
+//                 title
+//                 description
+//                 image {
+//                     publicURL
+//                     childImageSharp {
+//                         fluid(maxWidth: 1920) {
+//                             srcSet
+//                             ...GatsbyImageSharpFluid
+//                         }
+//                         id
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// `;
