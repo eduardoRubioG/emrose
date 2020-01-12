@@ -10,6 +10,9 @@ import "../style/basepage.less";
  * 
  */
 export default function({ data }) {
+    const _content = data.wpgraphql.pages.nodes[0].content;
+    const _title = data.wpgraphql.pages.nodes[0].title;
+    const _image = data.allWordpressWpUsers.nodes[0].simple_local_avatar.full.localFile; 
     return (
         <Layout>
             {/* <SEO
@@ -20,25 +23,24 @@ export default function({ data }) {
             <div className="container">
                 <article className="post">
                     <div className="head text-primary">
-                        <h1>{data.allWordpressPage.edges[0].node.title}</h1>
+                        <h1>{ _title }</h1>
                     </div>
                     <div className="content row flex">
                         {/* This is where the user image will go */}
-                        {/* {data.markdownRemark.frontmatter.image && (
+                        { _image && (
                             <div className="center">
                                 <div className="img">
-                                    <Img
-                                        fluid={
-                                            data.markdownRemark.frontmatter
-                                                .image.childImageSharp.fluid
-                                        }
+                                    <Img 
+                                    fluid={_image.childImageSharp.fluid}
+                                    sizes={{..._image.childImageSharp.fluid,aspectRatio:1/1}}    
                                     />
                                 </div>
-                            </div> */}
+                            </div>
+                        )}
                         <div
                             className="col s12 m11 l10"
                             dangerouslySetInnerHTML={{
-                                __html: data.allWordpressPage.edges[0].node.content
+                                __html: _content
                             }}
                         ></div>
                     </div>
@@ -47,18 +49,54 @@ export default function({ data }) {
         </Layout>
     );
 }
+// Importing: 
+// About page title (which is "About") but consider changing this to page ID 
+// The page content 
+// Featured image, which will be the actual profile pic -- ADD THIS TO THE 
 export const query = graphql`
     query {
-        allWordpressPage( filter: {title: {regex: "/About/"}} ){ 
-            edges { 
-                node { 
-                    title
-                    content
+        wpgraphql {
+            pages(where: {title: "About"}) {
+                nodes {
+                title
+                content
+                }
+            }
+        }
+        allWordpressWpUsers {
+            nodes {
+                simple_local_avatar {
+                    full {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: 1920){
+                                base64
+                                aspectRatio
+                                src
+                                srcSet
+                                tracedSVG
+                                sizes
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 `;
+// export const query = graphql`
+//     query {
+//         allWordpressPage( filter: {title: {regex: "/About/"}} ){ 
+//             edges { 
+//                 node { 
+//                     title
+//                     content
+//                 }
+//             }
+//         }
+//     }
+// `;
 // export const query = graphql`
 //     query($slug: String!) {
 //         markdownRemark(fields: { slug: { eq: $slug } }) {
