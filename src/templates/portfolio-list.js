@@ -6,6 +6,9 @@ import SectionTitle from "../components/sectiontitle";
 import Pagination from "../components/pagination";
 import SEO from "../components/seo";
 
+/**
+ * This is the page where the portfolio categories are listed 
+ */
 class PortfolioList extends React.Component {
     render() {
         const query = this.props.datas;
